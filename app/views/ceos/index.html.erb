@@ -1,0 +1,29 @@
+<h1>Listing ceos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ceos.each do |ceo| %>
+      <tr>
+        <td><%= ceo.name %></td>
+        <td><%= ceo.email %></td>
+        <td><%= link_to 'Show', ceo %></td>
+        <td><%= link_to 'Edit', edit_ceo_path(ceo) %></td>
+        <td><%= link_to 'Destroy', ceo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ceo', new_ceo_path %>
